@@ -1,0 +1,11 @@
+﻿  Pacman.cpp
+c:\users\ailyn tong\documents\visual studio 2015\projects\pacman\pacman\pacman.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  Ghost.cpp
+  Entity.cpp
+c:\users\ailyn tong\documents\visual studio 2015\projects\pacman\pacman\entity.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Cell.cpp
+  Board.cpp
+  Generating Code...
+  Pacman.vcxproj -> C:\Users\Ailyn Tong\Documents\Visual Studio 2015\Projects\Pacman\x64\Debug\Pacman.exe
+  Pacman.vcxproj -> C:\Users\Ailyn Tong\Documents\Visual Studio 2015\Projects\Pacman\x64\Debug\Pacman.pdb (Partial PDB)

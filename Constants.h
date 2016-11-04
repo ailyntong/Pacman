@@ -1,0 +1,23 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define FRAMERATE_LIMIT 30
+
+#define NUM_ROWS 36
+#define NUM_COLS 28
+
+#define CELL_SIZE 20
+
+//const sf::Color EMPTY_COLOR = sf::Color::Black;
+#define EMPTY_COLOR 0x000000FF
+#define WALL_COLOR 0x2121FFFF
+#define FOOD_COLOR 0xFFB8AEFF
+#define ENERGIZER_COLOR 0xDEDEFFFF
+
+#define PACMAN_COLOR 0xFFFF00FF
+#define BLINKY_COLOR 0xFF0000FF
+#define PINKY_COLOR 0xFFB8FFFF
+#define INKY_COLOR 0x00FFFFFF
+#define CLYDE_COLOR 0xFFB851FF
+
+#endif
