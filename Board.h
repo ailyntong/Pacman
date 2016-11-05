@@ -22,6 +22,8 @@ private:
 	std::array<std::array<Cell, NUM_COLS>, NUM_ROWS> board;
 	std::array<Ghost, 4> ghosts;
 	Pacman pacman;
+
+	void init_walls();
 };
 
 #endif

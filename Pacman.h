@@ -4,8 +4,8 @@
 #include "Entity.h"
 #include <iostream>
 
-#define PACMAN_INIT_X 0
-#define PACMAN_INIT_Y 0
+#define PACMAN_INIT_X 13
+#define PACMAN_INIT_Y 26
 
 class Pacman : public Entity {
 public:
