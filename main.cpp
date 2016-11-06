@@ -3,15 +3,18 @@
 #include <functional>
 
 #include "Constants.h"
-#include "Board.h"
-#include "Pacman.h"
+#include "Game.h"
+
+bool key(sf::Keyboard::Key key) { 
+	return sf::Keyboard::isKeyPressed(key); 
+}
 
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(CELL_SIZE * NUM_COLS, CELL_SIZE * NUM_ROWS), "Pacman");
 	window.setFramerateLimit(FRAMERATE_LIMIT);
 
-	Board board;
+	Game game;
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -20,10 +23,17 @@ int main() {
 				window.close();
 		}
 
+		int dx = 0, dy = 0;
+
+		if (key(sf::Keyboard::Up)) dy = -1;
+		else if (key(sf::Keyboard::Down)) dy = 1;
+		else if (key(sf::Keyboard::Left)) dx = -1;
+		else if (key(sf::Keyboard::Right)) dx = 1;
+
 		window.clear();
 
-		board.update();
-		board.draw(&window);
+		game.update({ dx, dy });
+		game.draw(&window);
 
 		window.display();
 	}

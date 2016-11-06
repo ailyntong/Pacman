@@ -9,13 +9,17 @@
 
 class Pacman : public Entity {
 public:
+	enum State {
+		NORMAL,
+		CHASE
+	} state;
+
 	Pacman();
 
-	void update();
+	void update(Move move);
 
 private:
 	inline bool key(sf::Keyboard::Key key) { return sf::Keyboard::isKeyPressed(key); }
-	void move(int dx, int dy);
 };
 
 #endif

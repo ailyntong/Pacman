@@ -1,11 +1,9 @@
 #include "Board.h"
 
-Board::Board() :
-	pacman(),
-	ghosts{ Ghost(BLINKY_COLOR, "blinky"),
-			Ghost(PINKY_COLOR, "pinky"),
-			Ghost(INKY_COLOR, "inky"),
-			Ghost(CLYDE_COLOR, "clyde") }
+Board::Board(Pacman *pacman, std::array<Ghost, 4> *ghosts) :
+	pacman(pacman),
+	ghosts(ghosts),
+	score(0)
 {
 	//initialize positions
 	for (int i = 0; i < NUM_ROWS; i++) {
@@ -14,16 +12,12 @@ Board::Board() :
 		}
 	}
 
-	init_walls();
-
-	//initialize food cells
-
-	//initialize energizer cells
+	init_board();
 }
 
 Board::~Board() {}
 
-void Board::init_walls() {
+void Board::init_board() {
 	std::array<std::array<int, NUM_COLS>, NUM_ROWS> cell_map = { {
 		{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
 		{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
@@ -70,8 +64,48 @@ void Board::init_walls() {
 	}
 }
 
-void Board::update() {
-	pacman.update();
+std::vector<Move> Board::get_moves(Cell origin) {
+	Position pos = origin.get_pos();
+	std::vector<Move> moves;
+	
+	if (!board[pos.x + 1][pos.y].state == Cell::State::WALL)
+		moves.push_back({ 1, 0 });
+	if (!board[pos.x - 1][pos.y].state == Cell::State::WALL)
+		moves.push_back({ -1, 0 });
+	if (!board[pos.x][pos.y + 1].state == Cell::State::WALL)
+		moves.push_back({ 0, 1 });
+	if (!board[pos.x][pos.y - 1].state == Cell::State::WALL)
+		moves.push_back({ 0, -1 });
+
+	return moves;
+}
+
+bool Board::update(Move move) {
+	int x = pacman->get_pos().x;
+	int y = pacman->get_pos().y;
+	int newX = x + move.first;
+	int newY = y + move.second;
+
+	if (newX < 0 || newX > NUM_COLS - 1 ||
+		newY < 0 || newY > NUM_ROWS - 1) {
+		return false;
+	}
+	if (board[newX][newY].state == Cell::State::WALL) {
+		return false;
+	}
+	//if ghost then die
+	else {
+		if (board[x][y].state == Cell::State::FOOD) {
+			++score;
+		}
+		//TODO: if energizer return something special
+		
+		board[x][y].set_state(Cell::State::EMPTY);
+		board[x][y].set_occupant(NULL);
+		
+		board[newX][newY].set_occupant(pacman);
+		return true;
+	}
 }
 
 void Board::draw(sf::RenderWindow *window) {
@@ -80,6 +114,4 @@ void Board::draw(sf::RenderWindow *window) {
 			board[i][k].draw(window);
 		}
 	}
-
-	pacman.draw(window);
 }

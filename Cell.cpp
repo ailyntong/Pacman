@@ -5,6 +5,7 @@ Cell::Cell(State state) :
 	cell(sf::Vector2f(CELL_SIZE, CELL_SIZE))
 {
 	occupant = NULL;
+	
 	set_state(state);
 
 	cell.setFillColor(color);

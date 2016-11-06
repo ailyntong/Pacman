@@ -5,13 +5,10 @@
 #include "Position.h"
 #include "Constants.h"
 
+using Move = std::pair<int, int>;
+
 class Entity {
 public:
-	enum State {
-		NORMAL,
-		INVERSE
-	} state;
-
 	Entity(Position pos = { 0, 0 }, uint32_t color = 0x000000FF);
 	~Entity(); 
 
