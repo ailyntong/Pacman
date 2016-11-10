@@ -1,3 +1,9 @@
-﻿  main.cpp
-  Pacman.vcxproj -> C:\Users\Ailyn Tong\documents\visual studio 2015\Projects\Pacman\x64\Debug\Pacman.exe
-  Pacman.vcxproj -> C:\Users\Ailyn Tong\documents\visual studio 2015\Projects\Pacman\x64\Debug\Pacman.pdb (Partial PDB)
+﻿  Board.cpp
+  Generating Code...
+  Compiling...
+  Cell.cpp
+  Generating Code...
+Cell.obj : error LNK2005: "struct Point __cdecl operator*(struct Point,float)" (??D@YA?AUPoint@@U0@M@Z) already defined in Board.obj
+Cell.obj : error LNK2005: "struct Point __cdecl operator-(struct Point const &,struct Point const &)" (??G@YA?AUPoint@@AEBU0@0@Z) already defined in Board.obj
+Cell.obj : error LNK2005: "struct Point __cdecl operator+(struct Point const &,struct Point const &)" (??H@YA?AUPoint@@AEBU0@0@Z) already defined in Board.obj
+C:\Users\Ailyn Tong\documents\visual studio 2015\Projects\Pacman\x64\Debug\Pacman.exe : fatal error LNK1169: one or more multiply defined symbols found

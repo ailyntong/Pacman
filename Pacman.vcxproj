@@ -22,10 +22,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{540b1ed3-a104-4ede-b3d4-cc4d0dfbf52d}</ProjectGuid>
