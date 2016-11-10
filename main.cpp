@@ -2,14 +2,14 @@
 #include <iostream>
 
 #include "Constants.h"
+#include "Board.h"
 
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(CELL_SIZE * NUM_COLS, CELL_SIZE * NUM_ROWS), "Pacman");
 	window.setFramerateLimit(30);
 
-	sf::CircleShape circle(100.f);
-	circle.setFillColor(sf::Color::Green);
+	Board board;
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -20,7 +20,7 @@ int main() {
 
 		window.clear();
 
-		window.draw(circle);
+		board.draw(&window);
 
 		window.display();
 	}

@@ -24,13 +24,17 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Pacman.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
