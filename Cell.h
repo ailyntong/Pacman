@@ -15,22 +15,22 @@ public:
 
 	void draw(sf::RenderWindow *window);
 
-	inline Point get_pos() const { return pos; }
+	inline Point pos() const { return _pos; }
 	inline void set_pos(const Point pos) { 
-		this->pos = pos; 
-		shape.setPosition(sf::Vector2f(pos.y * CELL_SIZE, pos.x * CELL_SIZE));
+		this->_pos = pos; 
+		_shape.setPosition(sf::Vector2f(pos.y * CELL_SIZE, pos.x * CELL_SIZE));
 	}
 	inline void set_state(const State state) {
 		this->state = state;
-		color = (state == EMPTY) ? sf::Color::Black : sf::Color::Blue;
-		shape.setFillColor(color);
+		_color = (state == EMPTY) ? sf::Color::Black : sf::Color::Blue;
+		_shape.setFillColor(_color);
 	}
 
 private:
-	sf::Color color;
-	sf::RectangleShape shape;
+	sf::Color _color;
+	sf::RectangleShape _shape;
 
-	Point pos;
+	Point _pos;
 };
 
 #endif

@@ -15,9 +15,9 @@ public:
 	void draw(sf::RenderWindow *window);
 
 private:
-	std::array<std::array<Cell, NUM_COLS>, NUM_ROWS> grid;
-	Pacman pacman;
-	std::vector<Ghost> ghosts;
+	std::array<std::array<Cell, NUM_COLS>, NUM_ROWS> _grid;
+	Pacman _pacman;
+	std::vector<Ghost> _ghosts;
 
 	void init_grid();
 	

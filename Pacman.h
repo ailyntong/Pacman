@@ -8,12 +8,12 @@ public:
 	Pacman();
 	~Pacman();
 
-	inline Point get_real_pos() const { return real_pos; }
-	inline Point get_grid_pos() const { return grid_pos; }
+	inline Point real_pos() const { return _real_pos; }
+	inline Point grid_pos() const { return _grid_pos; }
 
 private:
-	Point real_pos, grid_pos;
-	float speed;
+	Point _real_pos, _grid_pos;
+	float _speed;
 };
 
 #endif

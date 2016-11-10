@@ -1,7 +1,6 @@
 #include "Board.h"
 
-Board::Board() 
-{
+Board::Board() {
 	init_grid();
 }
 
@@ -44,8 +43,8 @@ void Board::init_grid() {
 
 	for (int i = 0; i < NUM_ROWS; ++i) {
 		for (int j = 0; j < NUM_COLS; ++j) {
-			grid[i][j].set_pos(Point{ (float)i, (float)j });
-			grid[i][j].set_state((Cell::State)cell_map[i][j]);
+			_grid[i][j].set_pos(Point{ (float)i, (float)j });
+			_grid[i][j].set_state((Cell::State)cell_map[i][j]);
 		}
 	}
 }
@@ -53,7 +52,7 @@ void Board::init_grid() {
 void Board::draw(sf::RenderWindow *window) {
 	for (int i = 0; i < NUM_ROWS; ++i) {
 		for (int j = 0; j < NUM_COLS; ++j) {
-			grid[i][j].draw(window);
+			_grid[i][j].draw(window);
 		}
 	}
 }
