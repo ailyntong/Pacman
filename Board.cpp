@@ -2,6 +2,10 @@
 
 Board::Board() {
 	init_grid();
+
+	if (mobs.size() != controllers.size()) {
+		std::cerr << "# of mobs doesn't match # of controllers!" << std::endl;
+	}
 }
 
 Board::~Board() {}

@@ -1,11 +1,11 @@
-﻿  Pacman.cpp
-  Ghost.cpp
-  Cell.cpp
-c:\users\ailyn tong\documents\visual studio 2015\projects\pacman\pacman\cell.cpp(7): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+﻿  Mob.cpp
+c:\users\ailyn tong\documents\visual studio 2015\projects\pacman\pacman\mob.cpp(7): warning C4244: 'argument': conversion from 'const int' to 'const float', possible loss of data
+c:\users\ailyn tong\documents\visual studio 2015\projects\pacman\pacman\mob.cpp(9): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  Controller.cpp
   Board.cpp
   Generating Code...
   Compiling...
   main.cpp
   Generating Code...
-  Pacman.vcxproj -> C:\Users\Ailyn Tong\documents\visual studio 2015\Projects\Pacman\x64\Debug\Pacman.exe
-  Pacman.vcxproj -> C:\Users\Ailyn Tong\documents\visual studio 2015\Projects\Pacman\x64\Debug\Pacman.pdb (Partial PDB)
+  Pacman.vcxproj -> C:\Users\Ailyn Tong\Documents\Visual Studio 2015\Projects\Pacman\x64\Debug\Pacman.exe
+  Pacman.vcxproj -> C:\Users\Ailyn Tong\Documents\Visual Studio 2015\Projects\Pacman\x64\Debug\Pacman.pdb (Partial PDB)

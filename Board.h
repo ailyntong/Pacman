@@ -1,11 +1,13 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <iostream>
+#include <vector>
 #include <array>
 #include "Constants.h"
 #include "Cell.h"
-#include "Pacman.h"
-#include "Ghost.h"
+#include "Mob.h"
+#include "Controller.h"
 
 class Board {
 public:
@@ -16,8 +18,8 @@ public:
 
 private:
 	std::array<std::array<Cell, NUM_COLS>, NUM_ROWS> _grid;
-	Pacman _pacman;
-	std::vector<Ghost> _ghosts;
+	std::vector<Mob> mobs;	//0 is pacman, rest are ghosts
+	std::vector<Controller> controllers;	//0 is pacman, rest are ghosts
 
 	void init_grid();
 	

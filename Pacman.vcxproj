@@ -24,8 +24,10 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="Point.cpp" />
   </ItemGroup>
@@ -33,7 +35,9 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Mob.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
