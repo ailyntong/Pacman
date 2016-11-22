@@ -5,7 +5,7 @@
 #include "Board.h"
 
 int main() {
-
+	std::cout << "test" << std::endl;
 	sf::RenderWindow window(sf::VideoMode(CELL_SIZE * NUM_COLS, CELL_SIZE * NUM_ROWS), "Pacman");
 	window.setFramerateLimit(30);
 
