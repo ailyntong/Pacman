@@ -6,17 +6,24 @@
 struct Point {
 	float x, y;
 
-	float mag() {
+	float mag() const {
 		return std::sqrt((x * x) + (y * y));
 	}
+	Point operator - () const;
 };
 
 Point operator + (const Point &lhs, const Point &rhs);
 
 Point operator - (const Point &lhs, const Point &rhs);
 
+bool operator == (const Point &lhs, const Point &rhs);
+
+bool operator != (const Point &lhs, const Point &rhs);
+
 Point operator * (const Point point, const float mult);
 
 Point operator * (const float mult, const Point point);
+
+Point operator / (const Point &lhs, float denominator);
 
 #endif
