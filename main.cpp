@@ -1,30 +1,32 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
 
 #include "Constants.h"
+#include "Point.h"
+#include "Cell.h"
 #include "Board.h"
+#include "PacmanUI.h"
 
 int main() {
-	std::cout << "test" << std::endl;
-	sf::RenderWindow window(sf::VideoMode(CELL_SIZE * NUM_COLS, CELL_SIZE * NUM_ROWS), "Pacman");
-	window.setFramerateLimit(30);
-
+	float SCREEN_Y = 640;
+	float SCREEN_X = SCREEN_Y*(1/ASPECT_RATIO);
 	Board board;
+	PacmanUI ui(&board, SCREEN_X, SCREEN_Y);
 
-	while (window.isOpen()) {
+	sf::RenderWindow window(sf::VideoMode(SCREEN_X, SCREEN_Y), "Pacman");
+	window.setFramerateLimit(60);
+
+	while(window.isOpen()) {
+
 		sf::Event event;
-		while (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
+		while(window.pollEvent(event)) {
+			if(event.type == sf::Event::Closed)
 				window.close();
 		}
 
-		window.clear();
-
-		board.draw(&window);
-
+		window.clear(sf::Color::Blue);
+		window.draw(ui);
 		window.display();
 	}
 
-	std::cin.ignore();
 	return 0;
 }

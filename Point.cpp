@@ -31,6 +31,10 @@ Point operator/(const Point & lhs, float denominator) {
 	return (1 / denominator) * lhs;
 }
 
+float Point::mag() const {
+	return std::sqrt(std::pow(x, 2) + std::pow(y, 2));
+}
+
 Point Point::operator-() const {
 	return Point{-x, -y};
 }

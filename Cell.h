@@ -1,36 +1,29 @@
 #ifndef CELL_H
 #define CELL_H
 
-#include <SFML/Graphics.hpp>
 #include "Point.h"
-#include "Constants.h"
 
 class Cell {
 public:
-	enum State { EMPTY, WALL } state;
-	enum Item { NONE, FOOD, ENERGIZER } item;
-	
-	Cell(const Point pos = { 0, 0 });
-	~Cell();
-
-	void draw(sf::RenderWindow *window);
-
-	inline Point pos() const { return _pos; }
-	inline void set_pos(const Point pos) { 
-		this->_pos = pos; 
-		_shape.setPosition(sf::Vector2f(pos.y * CELL_SIZE, pos.x * CELL_SIZE));
-	}
-	inline void set_state(const State state) {
-		this->state = state;
-		_color = (state == EMPTY) ? sf::Color::Black : sf::Color::Blue;
-		_shape.setFillColor(_color);
-	}
-
+	enum class State {
+		INVALID = 0b001,
+		OPEN = 0b010,
+		WALL = 0b100
+	};
+	enum class Item {
+		INVALID = 0b0001,
+		NONE = 0b0010,
+		FOOD = 0b0100,
+		ENERGIZER = 0b1000
+	};
+	Cell(Point pos = {-1, -1}, State state = State::INVALID, Item item = Item::INVALID);
+	Point pos() const { return _pos; }
+	State state() const { return _state; }
+	Item item() const { return _item; }
 private:
-	sf::Color _color;
-	sf::RectangleShape _shape;
-
 	Point _pos;
+	State _state;
+	Item _item;
+	friend class Board;
 };
-
 #endif

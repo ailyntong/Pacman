@@ -5,10 +5,7 @@
 
 struct Point {
 	float x, y;
-
-	float mag() const {
-		return std::sqrt((x * x) + (y * y));
-	}
+	float mag() const;
 	Point operator - () const;
 };
 
