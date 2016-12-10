@@ -12,9 +12,9 @@ class Board {
 public:
 	Board();
 
-	std::array<std::array<Cell, NUM_ROWS>, NUM_COLS> grid() const { return _grid; };
+	Grid<Cell> grid() const { return _grid; };
 private:
-	std::array<std::array<Cell, NUM_ROWS>, NUM_COLS> _grid;
+	Grid<Cell> _grid;
 	Pacman _pacman;
 	std::vector<Ghost> _ghosts;
 };
