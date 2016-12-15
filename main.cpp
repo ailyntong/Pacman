@@ -13,7 +13,7 @@ int main() {
 	PacmanUI ui(&board, SCREEN_X, SCREEN_Y);
 
 	sf::RenderWindow window(sf::VideoMode(SCREEN_X, SCREEN_Y), "Pacman");
-	window.setFramerateLimit(60);
+	window.setFramerateLimit(30);
 
 	while(window.isOpen()) {
 

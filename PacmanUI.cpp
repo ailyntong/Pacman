@@ -41,6 +41,14 @@ void PacmanUI::draw_cell_background(sf::RenderTarget &target, sf::RenderStates s
 			rect.setFillColor(sf::Color{0x13131BFF});
 			break;
 	}
+	//sf::RectangleShape rect2{{10, 10}};
+	//rect2.setPosition({cell.pos().x*cell_side_x, cell.pos().y*cell_side_y});
+	//if((int)(cell.pos().x + cell.pos().y) % 2) {
+	//	rect2.setFillColor(sf::Color::Green);
+	//} else {
+	//	rect2.setFillColor(sf::Color::Blue);
+	//}
+	//target.draw(rect2);
 	target.draw(rect);
 }
 

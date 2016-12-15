@@ -17,6 +17,7 @@ private:
 	Grid<Cell> _grid;
 	Pacman _pacman;
 	std::vector<Ghost> _ghosts;
+	//std::array<Point, 30> _intersections = {}; // Locations where have to make decisions
 };
 
 #endif
